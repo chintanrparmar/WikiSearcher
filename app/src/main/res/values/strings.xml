@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Wiki Searcher</string>
+    <string name="no_articles_could_be_found">No articles could be found for that topic</string>
+    <string name="fetching_the_list">Fetching the list, please wait…</string>
+    <string name="get_started">Get started by searching for a topic</string>
+    <string name="new_window_icon">New Window Icon</string>
 </resources>
