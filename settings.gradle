@@ -1,0 +1,2 @@
+rootProject.name='Wiki Searcher'
+include ':app'
