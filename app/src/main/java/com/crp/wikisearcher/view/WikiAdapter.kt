@@ -10,7 +10,6 @@ import com.crp.wikisearcher.datamodel.Page
 class WikiAdapter(private val list: List<Page>, val adapterOnClick: (Any) -> Unit) :
     RecyclerView.Adapter<WikiAdapter.WikiView>() {
 
-
     inner class WikiView(private val binding: WikiSearchItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
@@ -29,9 +28,7 @@ class WikiAdapter(private val list: List<Page>, val adapterOnClick: (Any) -> Uni
     override fun getItemCount() = list.size
 
 
-    override fun onBindViewHolder(holder: WikiView, position: Int) {
-        holder.bind(list[position])
-    }
+    override fun onBindViewHolder(holder: WikiView, position: Int) = holder.bind(list[position])
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = WikiView(
         WikiSearchItemBinding.inflate(

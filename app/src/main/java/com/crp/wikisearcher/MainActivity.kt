@@ -5,6 +5,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.View.GONE
 import android.view.View.VISIBLE
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.Observer
@@ -60,15 +61,10 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    private fun openBrowser(string: String) {
-        startActivity(
-            Intent(
-                Intent.ACTION_VIEW,
-                Uri.parse("https://en.wikipedia.org/wiki/$string")
-            )
-        )
+    private fun openBrowser(string: String) = startActivity(
+        Intent(Intent.ACTION_VIEW, Uri.parse("https://en.wikipedia.org/wiki/$string"))
+    )
 
-    }
 
     private fun loadingState(isLoading: Boolean) {
         if (isLoading) {
@@ -82,7 +78,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun callSearchApi(searchString: String) {
-        viewModel.getWikiData(searchString)
+        if (Helper.isNetworkAvailable(this))
+            viewModel.getWikiData(searchString)
+        else
+            Toast.makeText(this, "No Internet Connection", Toast.LENGTH_SHORT).show()
     }
 
 }

@@ -13,14 +13,17 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import java.util.concurrent.TimeUnit
 
 val networkModule = module {
+
     single(named("BASE_URL")) {
         "https://en.wikipedia.org/w/"
     }
+
     single {
         val interceptor = HttpLoggingInterceptor()
         interceptor.level = HttpLoggingInterceptor.Level.BODY
         interceptor
     }
+
     single {
         val client = OkHttpClient().newBuilder()
             .writeTimeout(30, TimeUnit.SECONDS)
@@ -30,11 +33,12 @@ val networkModule = module {
             client.addInterceptor(get<HttpLoggingInterceptor>())
         }
         client.build()
-
     }
+
     single {
         Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
     }
+
     single {
         Retrofit.Builder().baseUrl(get<String>(named("BASE_URL")))
             .addConverterFactory(MoshiConverterFactory.create(get()))
