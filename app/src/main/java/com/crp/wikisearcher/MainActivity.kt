@@ -9,16 +9,18 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import com.crp.wikisearcher.databinding.ActivityMainBinding
 import com.crp.wikisearcher.utils.Helper
 import com.crp.wikisearcher.view.State
 import com.crp.wikisearcher.view.WikiAdapter
 import com.crp.wikisearcher.viewmodel.WikiViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 class MainActivity : AppCompatActivity() {
-    lateinit var viewModel: WikiViewModel
+
+
+    private val viewModel: WikiViewModel by viewModel()
 
     private lateinit var binding: ActivityMainBinding
 
@@ -28,8 +30,6 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-
-        viewModel = ViewModelProvider(this@MainActivity).get(WikiViewModel::class.java)
 
         binding.searchNow.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
