@@ -3,7 +3,7 @@
 
 ## About
 
-It simply uses the [Wikipedia API](https://www.mediawiki.org/wiki/API:Page_info_in_search_results) to show a list of search results.
+It uses the [Wikipedia API](https://www.mediawiki.org/wiki/API:Page_info_in_search_results) to show a list of search results.
 
 ## Built With
 
