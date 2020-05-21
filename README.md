@@ -1,5 +1,8 @@
 ![Cover Image](https://github.com/chintanrparmar/WikiSearcher/blob/master/cover_image.png)
 
+***You can Install the Sample app by clicking below 👇***
+
+[![WikiSearcher App](https://img.shields.io/badge/WikiSearcher-APK-red)](https://github.com/chintanrparmar/WikiSearcher/raw/master/sample-app.apk)
 
 ## About
 
