@@ -26,7 +26,7 @@ that sequentially emits values and completes normally or with an exception.
 
 ## Contact
 If you need any help, feel free to connect.
-[Dev Profile](https://dev.to/chintan)
+[chintan.app](https://chintan.app)
 
 
 
