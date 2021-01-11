@@ -1,5 +1,8 @@
 ![Cover Image](https://github.com/chintanrparmar/WikiSearcher/blob/master/cover_image.png)
 
+***You can Install the Sample app by clicking below 👇***
+
+[![WikiSearcher App](https://img.shields.io/badge/WikiSearcher-APK-red)](https://github.com/chintanrparmar/WikiSearcher/raw/master/sample-app.apk)
 
 ## About
 
@@ -23,7 +26,7 @@ that sequentially emits values and completes normally or with an exception.
 
 ## Contact
 If you need any help, feel free to connect.
-[Dev Profile](https://dev.to/chintan)
+[chintan.app](https://chintan.app)
 
 
 
