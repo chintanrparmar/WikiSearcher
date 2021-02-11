@@ -10,7 +10,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.Observer
 import com.crp.wikisearcher.databinding.ActivityMainBinding
-import com.crp.wikisearcher.utils.Helper
+import com.crp.wikisearcher.utils.hideKeyboard
+import com.crp.wikisearcher.utils.isNetworkAvailable
 import com.crp.wikisearcher.view.State
 import com.crp.wikisearcher.view.WikiAdapter
 import com.crp.wikisearcher.viewmodel.WikiViewModel
@@ -72,13 +73,13 @@ class MainActivity : AppCompatActivity() {
             binding.defaultState.visibility = GONE
             binding.noDataState.visibility = GONE
         } else {
-            Helper.hideKeyboard(this)
+            hideKeyboard()
             binding.loadingState.visibility = GONE
         }
     }
 
     fun callSearchApi(searchString: String) {
-        if (Helper.isNetworkAvailable(this))
+        if (isNetworkAvailable())
             viewModel.getWikiData(searchString)
         else
             Toast.makeText(this, "No Internet Connection", Toast.LENGTH_SHORT).show()
